@@ -8,6 +8,7 @@ Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
         	->where('route', '.*')
             ->name('H5');
     });
+Route::any('/wechat', 'WechatController@serve');
 Route::group(['middleware' => ['web', 'wechat.oauth']], function () {
     Route::get('/wechatuser', function () {
         
