@@ -20,11 +20,10 @@ Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
 Route::any('/wechat', WechatController::class. '@serve');
 
     
-
-// Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
-//     ->group(['middleware' => ['web', 'wechat.oauth']], function () {
-//     Route::get('/wechatuser', function () {
+Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
+    ->group(['middleware' => ['web', 'wechat.oauth']], function () {
+    Route::get('/wechatuser', function () {
         
-//         return redirect()->route('H5');
-//     });
-// });
+        return redirect()->route('H5');
+    });
+});
