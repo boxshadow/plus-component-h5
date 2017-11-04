@@ -1,4 +1,5 @@
 <?php
+use Zhiyi\Component\ZhiyiPlus\PlusComponentH5\Controllers\WechatController;
 
 Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
     ->prefix('/web')
@@ -16,7 +17,7 @@ Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
             ->name('H5');
     });
 
-Route::any('/wechat', 'WechatController@serve');
+Route::any('/wechat', WechatController::class. '@serve');
 
     
 
