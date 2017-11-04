@@ -9,7 +9,7 @@ Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
             ->name('H5');
     });
 Route::group(['middleware' => ['web', 'wechat.oauth']], function () {
-    Route::get('/wechat', function () {
+    Route::get('/wechatuser', function () {
         
         return redirect()->route('H5');
     });
