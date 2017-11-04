@@ -8,6 +8,9 @@ use Zhiyi\Plus\Http\Controllers\Controller;
 use Illuminate\Contracts\Config\Repository;
 use Zhiyi\Component\ZhiyiPlus\PlusComponentIm\Repository\ImServe as ImServeRepsitory;
 
+use function zhiyi\Component\ZhiyiPlus\PlusComponentH5\isMobile;
+use function zhiyi\Component\ZhiyiPlus\PlusComponentH5\isWechat;
+
 class HomeController extends Controller
 {
     /**
@@ -25,6 +28,9 @@ class HomeController extends Controller
         $siteSetting = config('app');
         $jssdkAmap = config('around-amap.amap-jssdk');
 
+        $user = session('wechat.oauth_user');
+
+        dd($user);
         return view('plus:h5::index', [
             'jssdkAmap' => $jssdkAmap,
             'siteName' => $siteSetting['name'],

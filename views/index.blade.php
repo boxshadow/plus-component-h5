@@ -161,7 +161,7 @@
       'isWeiXin' => false,
       'currentUserId' => 0,
       'dataBase' => null,
-      'goldName' => $goldName
+      'goldName' => $goldName,
     ]) !!}
   </script>
 </head>
