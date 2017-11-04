@@ -1,4 +1,6 @@
 <?php
+
+use Zhiyi\Plus\Http\Middleware;
 use Zhiyi\Component\ZhiyiPlus\PlusComponentH5\Controllers\WechatController;
 
 Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
