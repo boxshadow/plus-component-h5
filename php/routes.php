@@ -9,11 +9,11 @@ Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
             ->name('H5');
     });
 
-Route::prefix('/wechat')
-    ->namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
-    ->group( function () {
+// Route::prefix('/wechat')
+//     ->namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
+//     ->group( function () {
         Route::any('/', 'WechatController@serve');
-    });
+    // });
     
 
 Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
