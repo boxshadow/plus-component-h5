@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
     ->prefix('/web')
@@ -7,9 +8,13 @@ Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
         	->where('route', '.*')
             ->name('H5');
     });
+
+Route::prefix('/wechat')
+    ->namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
+    ->group( function () {
+        Route::any('/', 'WechatController@serve');
+    });
     
-Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
-    ->any('/wechat', 'WechatController@serve');
 
 Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
     ->group(['middleware' => ['web', 'wechat.oauth']], function () {
