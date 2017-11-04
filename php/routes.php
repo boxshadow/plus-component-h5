@@ -1,5 +1,4 @@
 <?php
-use Illuminate\Support\Facades\Route;
 
 Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
     ->prefix('/web')
@@ -9,26 +8,22 @@ Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
             ->name('H5');
     });
 
-// Route::prefix('/wechat')
-//     ->namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
-//     ->group( function () {
-        Route::any('/wechat', 'WechatController@serve');
-    // });
-    
-
-Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
-    ->group(['middleware' => ['web', 'wechat.oauth']], function () {
-    Route::get('/wechatuser', function () {
-        
-        return redirect()->route('H5');
-    });
-});
-
 Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
     ->prefix('/h5')
-    // ->middleware('h5')
     ->group(function () {
         Route::get('/{route?}', 'HomeController@index')
         	->where('route', '.*')
             ->name('H5');
     });
+
+Route::any('/wechat', 'WechatController@serve');
+
+    
+
+// Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
+//     ->group(['middleware' => ['web', 'wechat.oauth']], function () {
+//     Route::get('/wechatuser', function () {
+        
+//         return redirect()->route('H5');
+//     });
+// });
