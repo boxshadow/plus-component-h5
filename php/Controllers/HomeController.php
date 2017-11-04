@@ -2,6 +2,7 @@
 
 namespace Zhiyi\Component\ZhiyiPlus\PlusComponentH5\Controllers;
 
+use Illuminate\Http\Request;
 use Zhiyi\Plus\Models\GoldType;
 use Zhiyi\Plus\Models\CommonConfig;
 use Zhiyi\Plus\Http\Controllers\Controller;
@@ -20,7 +21,7 @@ class HomeController extends Controller
      * @return mixed
      * @author Seven Du <shiweidu@outlook.com>
      */
-    public function index(ImServeRepsitory $repository, GoldType $goldType, Repository $config, CommonConfig $common)
+    public function index(Request $request, ImServeRepsitory $repository, GoldType $goldType, Repository $config, CommonConfig $common)
     {
         // 金币设置
         $gold = $goldType->where('status', 1)->select('name', 'unit')->first();

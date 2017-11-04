@@ -9,6 +9,10 @@ Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
             ->name('H5');
     });
 Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
+    ->any('/wechat', function () {
+        recirect()->route('H5');
+    });
+Route::namespace('Zhiyi\\Component\\ZhiyiPlus\\PlusComponentH5\\Controllers')
     ->prefix('/h5')
     // ->middleware('h5')
     ->group(function () {
